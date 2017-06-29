@@ -89,7 +89,7 @@ The following tables lists the configurable parameters of the Traefik chart and 
 | Parameter                       | Description                                                          | Default                                   |
 | ------------------------------- | -------------------------------------------------------------------- | ----------------------------------------- |
 | `image`                         | Traefik image name                                                   | `traefik`                                 |
-| `imageTag`                      | The version of the official Traefik image to use                     | `v1.2.1`                                  |
+| `imageTag`                      | The version of the official Traefik image to use                     | `1.3.1`                                  |
 | `serviceType`                   | A valid Kubernetes service type                                      | `LoadBalancer`                            |
 | `replicas`                      | The number of replicas to run; __NOTE:__ Full Traefik clustering with leader election is not yet supported, which can affect any configured Let's Encrypt setup; see Clustering section | `1` |
 | `cpuRequest`                    | Initial share of CPU requested per Traefik pod                       | `100m`                                    |
@@ -97,6 +97,8 @@ The following tables lists the configurable parameters of the Traefik chart and 
 | `cpuLimit`                      | CPU limit per Traefik pod                                            | `200m`                                    |
 | `memoryLimit`                   | Memory limit per Traefik pod                                         | `30Mi`                                    |
 | `rbac.enabled`                  | Whether to enable RBAC with a specific cluster role and binding for Traefik | `false`                            |
+| `nodeSelector`                  | Node labels for pod assignment                                       | `{}`                                      |
+| `tolerations`                   | List of node taints to tolerate                                      | `[]`                                      |
 | `ssl.enabled`                   | Whether to enable HTTPS                                              | `false`                                   |
 | `ssl.enforced`                  | Whether to redirect HTTP requests to HTTPS                           | `false`                                   |
 | `ssl.defaultCert`               | Base64 encoded default certficate                                    | A self-signed certificate                 |
